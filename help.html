@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MediCare Portal — Help</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg,#e0f7fa,#ffffff);
+      color: #05445E;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    header {
+      background: linear-gradient(90deg,#0288d1,#26c6da);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 1s ease;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 20px;
+      transition: transform .3s;
+    }
+    header .logo:hover { transform: scale(1.1) rotate(-2deg); }
+    header .logo svg { width: 28px; height: 28px }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 26px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      position: relative;
+      transition: .3s;
+    }
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: #ffeb3b;
+      transition: width .3s ease;
+    }
+    nav ul li a:hover::after { width: 100%; }
+    nav ul li a:hover { color: #ffeb3b; }
+    .logout-btn {
+      background: #fff;
+      color: #0288d1;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: .3s;
+    }
+    .logout-btn:hover { background:#01579b; color:#fff; }
+
+    /* Container */
+    .container {
+      padding: 60px 40px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 1.5s ease;
+    }
+    .container h1 {
+      color:#01579b;
+      margin-bottom:30px;
+      font-size:36px;
+      text-align:center;
+      animation: slideUp 1s ease;
+    }
+
+    /* Contact info */
+    .contact-info {
+      background:#fff;
+      border-radius:16px;
+      padding:30px;
+      margin-bottom:40px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.1);
+      animation: cardFade 1s forwards;
+      animation-delay: .4s;
+      opacity: 0;
+      transform: translateY(40px);
+      transition:.4s;
+    }
+    .contact-info:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    }
+    .contact-info h2 {
+      color:#0288d1;
+      margin-bottom:15px;
+    }
+    .contact-info p { color:#0277bd; margin:6px 0; }
+
+    /* Form */
+    form {
+      background:#fff;
+      padding:30px;
+      border-radius:16px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.1);
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+      animation: cardFade 1s forwards;
+      animation-delay: .8s;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    form label {
+      font-weight:600;
+      color:#01579b;
+      text-align:left;
+    }
+    form input, form textarea {
+      padding:12px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      font-size:15px;
+      font-family:'Poppins',sans-serif;
+      transition:.3s;
+    }
+    form input:focus, form textarea:focus {
+      border-color:#0288d1;
+      outline:none;
+      box-shadow:0 0 6px rgba(2,136,209,.5);
+      transform: scale(1.02);
+    }
+    form button {
+      background:#0288d1;
+      color:#fff;
+      padding:12px;
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:.3s;
+    }
+    form button:hover {
+      background:#01579b;
+      transform:scale(1.08);
+      box-shadow:0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    /* Footer */
+    footer {
+      padding:20px;
+      text-align:center;
+      background:#0288d1;
+      color:#fff;
+      margin-top:40px;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    @keyframes slideUp { from{opacity:0; transform:translateY(50px)} to{opacity:1; transform:translateY(0)} }
+    @keyframes slideDown { from{transform:translateY(-100%); opacity:0} to{transform:translateY(0); opacity:1} }
+    @keyframes cardFade { to { opacity:1; transform:translateY(0); } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20M2 12h20"/></svg>
+      MediCare Portal
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Service</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="career.html">Career</a></li>
+        <li><a href="help.html">Help Us</a></li>
+        <li><a href="login.html" class="logout-btn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Contact & Enquiry</h1>
+
+    <div class="contact-info">
+      <h2>Hospital Contact Details</h2>
+      <p><strong>Address:</strong> MediCare Hospital, 123 Health Street, New Delhi</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+      <p><strong>Email:</strong> support@medicareportal.com</p>
+      <p><strong>Working Hours:</strong> Mon – Sat, 9:00 AM – 7:00 PM</p>
+    </div>
+
+    <form>
+      <h2>Enquiry Form</h2>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Type your enquiry here..." required></textarea>
+
+      <button type="submit">Submit Enquiry</button>
+    </form>
+  </div>
+
+  <footer>
+    © 2025 MediCare Portal — All Rights Reserved.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MediCare Portal — Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg,#e0f7fa,#ffffff);
+      color: #05445E;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    header {
+      background: linear-gradient(90deg,#0288d1,#26c6da);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 1s ease;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 20px;
+      transition: transform .3s;
+    }
+    header .logo:hover { transform: scale(1.1) rotate(-2deg); }
+    header .logo svg { width: 28px; height: 28px }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 26px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      position: relative;
+      transition: .3s;
+    }
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: #ffeb3b;
+      transition: width .3s ease;
+    }
+    nav ul li a:hover::after { width: 100%; }
+    nav ul li a:hover { color: #ffeb3b; }
+    .logout-btn {
+      background: #fff;
+      color: #0288d1;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: .3s;
+    }
+    .logout-btn:hover { background:#01579b; color:#fff; }
+
+    /* Container */
+    .container {
+      padding: 60px 40px;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+    .container h1 {
+      color:#01579b;
+      margin-bottom:40px;
+      font-size:36px;
+      animation: slideUp 1s ease;
+    }
+
+    /* Doctor cards */
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+    .card {
+      background:#fff;
+      padding:20px;
+      border-radius:16px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.1);
+      transition: all .4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: cardFade 1s forwards;
+    }
+    .card:nth-child(1){animation-delay:.3s}
+    .card:nth-child(2){animation-delay:.6s}
+    .card:nth-child(3){animation-delay:.9s}
+    .card:nth-child(4){animation-delay:1.2s}
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25);
+    }
+    .card img {
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border-radius:12px;
+      margin-bottom:15px;
+      transition: transform .4s ease;
+    }
+    .card:hover img { transform: scale(1.1); }
+    .card h3 { margin:10px 0; color:#0288d1 }
+    .card p { margin:4px 0; color:#0277bd }
+
+    /* Footer */
+    footer {
+      padding:20px;
+      text-align:center;
+      background:#0288d1;
+      color:#fff;
+      margin-top:40px;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity:0; }
+      to { opacity:1; }
+    }
+    @keyframes slideUp {
+      from { opacity:0; transform:translateY(50px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+    @keyframes slideDown {
+      from { transform:translateY(-100%); opacity:0; }
+      to { transform:translateY(0); opacity:1; }
+    }
+    @keyframes cardFade {
+      to { opacity:1; transform:translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20M2 12h20"/></svg>
+      MediCare Portal
+    </div>
+    <nav>
+      <ul>
+        <li><a >Home</a></li>
+        <li><a href ="#service">Service</a></li>
+        <li><a >About</a></li>
+        <li><a >Career</a></li>
+        <li><a >Help Us</a></li>
+        <li><a  class="logout-btn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Our Doctors & Services</h1>
+    <div class="grid">
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/portrait-smiling-doctor_144627-15054.jpg" alt="Doctor">
+        <h3>Dr. A. Sharma</h3>
+        <p>Speciality: Cardiologist</p>
+        <p>Timing: 9:00 AM – 1:00 PM</p>
+        <p>Charge: ₹800</p>
+      </div>
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/female-doctor-office_144627-20372.jpg" alt="Doctor">
+        <h3>Dr. P. Verma</h3>
+        <p>Speciality: Pediatrician</p>
+        <p>Timing: 10:00 AM – 4:00 PM</p>
+        <p>Charge: ₹600</p>
+      </div>
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/doctor-with-stethoscope-hospital_1150-21714.jpg" alt="Doctor">
+        <h3>Dr. R. Gupta</h3>
+        <p>Speciality: Orthopedic</p>
+        <p>Timing: 2:00 PM – 6:00 PM</p>
+        <p>Charge: ₹700</p>
+      </div>
+      <div class="card">
+        <img src="https://img.freepik.com/free-photo/portrait-confident-young-doctor_1098-18186.jpg" alt="Doctor">
+        <h3>Dr. M. Khan</h3>
+        <p>Speciality: Neurologist</p>
+        <p>Timing: 11:00 AM – 3:00 PM</p>
+        <p>Charge: ₹1000</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 MediCare Portal — All Rights Reserved.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medical Portal — Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#e0f7fa,#ffffff);color:#05445E}
+    header{background:linear-gradient(90deg,#0288d1,#26c6da);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 4px 12px rgba(0,0,0,0.15);position:sticky;top:0;z-index:100;transition:background 0.5s ease, padding 0.5s ease}
+    header.scrolled{background:linear-gradient(90deg,#01579b,#0288d1);padding:10px 30px}
+    header .logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:20px;transition:transform .4s ease}
+    header .logo:hover{transform:scale(1.1) rotate(-2deg)}
+    header .logo svg{width:28px;height:28px}
+
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:26px;align-items:center}
+    nav ul li{transition:transform .3s ease}
+    nav ul li:hover{transform:translateY(-4px) scale(1.05)}
+    nav ul li a{text-decoration:none;color:#fff;font-weight:500;position:relative;transition:.3s;padding:4px 0}
+    nav ul li a::after{content:'';position:absolute;left:50%;bottom:-6px;width:0;height:3px;background:#fff;border-radius:2px;transition:.3s;transform:translateX(-50%)}
+    nav ul li a:hover::after{width:80%}
+
+    .logout-btn{background:#fff;color:#0288d1;font-weight:600;padding:6px 14px;border-radius:20px;text-decoration:none;transition:all .3s;box-shadow:0 4px 10px rgba(0,0,0,0.2)}
+    .logout-btn:hover{background:#01579b;color:#fff;transform:scale(1.1)}
+
+    .hero{padding:100px 40px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:0;left:-50%;width:200%;height:100%;background:radial-gradient(circle at center,rgba(255,255,255,0.6) 0%,transparent 70%);animation:shine 6s infinite linear}
+    .hero h1{font-size:44px;color:#01579b;animation:fadeIn 2s ease}
+    .hero p{max-width:720px;margin:20px auto;font-size:18px;line-height:1.6;color:#0277bd;animation:fadeIn 2.5s ease}
+    .hero img{margin-top:30px;max-width:600px;width:100%;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.15);animation:float 6s ease-in-out infinite}
+
+    .section{padding:70px 40px;text-align:center;animation:fadeInUp 1.5s ease both}
+    .section h2{font-size:30px;color:#01579b;margin-bottom:20px;position:relative;display:inline-block}
+    .section h2::after{content:'';display:block;width:60px;height:3px;background:#0288d1;margin:10px auto 0;border-radius:2px;animation:expand 2s ease}
+    .section p{max-width:700px;margin:0 auto;color:#0277bd;line-height:1.6}
+
+    footer{padding:20px;text-align:center;background:#0288d1;color:#fff;margin-top:40px}
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    @keyframes shine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+    @keyframes expand{from{width:0}to{width:60px}}
+  </style>
+</head>
+<body>
+  <header id="navbar">
+    <div class="logo">
+      <svg fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20M2 12h20"/></svg>
+      MediCare Portal
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a >Service</a></li>
+        <li><a >About</a></li>
+        <li><a >Career</a></li>
+        <li><a >Help Us</a></li>
+        <li><a href="login.html" class="logout-btn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Welcome to MediCare Portal</h1>
+    <p>Your trusted platform for managing patient records, booking appointments, accessing lab results, and connecting with healthcare professionals.</p>
+    <img src="data:image/jpeg;base64,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" alt="Medical illustration">
+  </section>
+  <footer>
+    © 2025 MediCare Portal — All Rights Reserved.
+  </footer>
+
+  <script>
+    const navbar=document.getElementById('navbar');
+    const links=document.querySelectorAll('nav ul li a');
+
+    window.addEventListener('scroll',()=>{
+      if(window.scrollY>50){
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      let fromTop=window.scrollY;
+      links.forEach(link=>{
+        const section=document.querySelector(link.getAttribute('href'));
+        if(section.offsetTop<=fromTop+60 && section.offsetTop+section.offsetHeight>fromTop+60){
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
+  <style>
+    nav ul li a.active::after{width:100%;background:#ffeb3b}
+  </style>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medical Portal — Animated Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #e0f7fa; /* light medical teal */
+      --accent1: #0288d1; /* medical blue */
+      --accent2: #26c6da; /* cyan */
+      --accent3: #43a047; /* health green */
+      --glass: rgba(255,255,255,0.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(135deg, var(--bg1) 0%, #ffffff 100%);color:#05445E;overflow:hidden}
+
+    .wrap{min-height:100vh;display:grid;grid-template-columns:1fr 480px;align-items:center;gap:40px;padding:40px;position:relative}
+
+    /* Animated background gradient waves */
+    .wave{position:absolute;bottom:0;left:0;width:200%;height:200%;background:radial-gradient(circle at 50% 50%, rgba(2,136,209,0.15), transparent 70%);animation:waveMove 12s linear infinite;z-index:-1;border-radius:50%}
+    .wave2{background:radial-gradient(circle at 50% 50%, rgba(38,198,218,0.15), transparent 70%);animation:waveMove 18s linear infinite reverse;}
+    .wave3{background:radial-gradient(circle at 50% 50%, rgba(67,160,71,0.15), transparent 70%);animation:waveMove 22s linear infinite alternate;}
+    @keyframes waveMove{from{transform:translateX(0) translateY(0)}to{transform:translateX(-25%) translateY(-10%)}}
+
+    .hero{padding:40px;border-radius:20px;background:rgba(255,255,255,0.4);backdrop-filter:blur(10px);box-shadow:0 10px 40px rgba(2,136,209,0.2);position:relative;overflow:hidden;animation:fadeIn 2s ease}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+    .logo{display:flex;gap:14px;align-items:center;animation:slideIn 1.5s ease}
+    @keyframes slideIn{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:translateX(0)}}
+
+    .mark{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(2,136,209,0.2);animation:pulseMark 3s infinite ease-in-out}
+    @keyframes pulseMark{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.2) rotate(10deg)}}
+
+    h1{font-size:32px;margin:20px 0 8px;color:#01579b;animation:fadeSlide 2s ease}
+    p.lead{color:#0277bd;max-width:640px;line-height:1.6;animation:fadeSlide 2.2s ease}
+
+    @keyframes fadeSlide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+    .card{width:100%;max-width:480px;margin:0 auto;padding:28px;border-radius:20px;background:rgba(255,255,255,0.85);box-shadow:0 15px 45px rgba(2,136,209,0.25);backdrop-filter:blur(12px);position:relative;overflow:hidden;animation:slideUp 1.8s ease}
+    @keyframes slideUp{from{opacity:0;transform:translateY(60px) scale(0.9)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+    .card::after{content:'';position:absolute;left:0;right:0;bottom:-40%;height:60%;background:linear-gradient(180deg, rgba(38,198,218,0.15), rgba(2,136,209,0.2), rgba(67,160,71,0.15));transform:skewY(-6deg);opacity:0.9;pointer-events:none;animation:gradientShift 6s infinite alternate ease-in-out}
+    @keyframes gradientShift{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(90deg)}}
+
+    .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;position:relative;z-index:2;color:#01579b;animation:fadeSlide 2s ease}
+    .toggle{background:rgba(2,136,209,0.1);padding:6px;border-radius:999px;display:inline-flex}
+    .toggle button{background:transparent;border:none;padding:8px 12px;border-radius:999px;cursor:pointer;font-weight:600;color:#0277bd;transition:all .3s}
+    .toggle button.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;box-shadow:0 6px 18px rgba(2,136,209,0.25);transform:scale(1.05)}
+
+    label{display:block;font-size:13px;color:#0277bd;margin-bottom:6px}
+    input[type='text'],input[type='password']{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(2,136,209,0.3);background:rgba(255,255,255,0.7);color:#01579b;font-size:15px;outline:none;transition:all .3s}
+    input:focus{transform:scale(1.03);border-color:var(--accent1);box-shadow:0 8px 25px rgba(2,136,209,0.3)}
+
+    .btn{padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:600;letter-spacing:0.2px;transition:all .25s;position:relative;overflow:hidden}
+    .btn-primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;box-shadow:0 10px 30px rgba(2,136,209,0.3)}
+    .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,0.3);transform:skewX(-30deg);transition:0.5s}
+    .btn-primary:hover::before{left:200%}
+    .btn-primary:hover{transform:translateY(-3px) scale(1.05)}
+    .btn-primary:active{transform:translateY(2px) scale(.97)}
+
+    .btn-ghost{background:transparent;border:1px solid rgba(2,136,209,0.3);color:#0277bd}
+
+    .or{text-align:center;margin:12px 0;color:#0277bd;font-size:13px}
+    .icons{display:flex;gap:10px;justify-content:center;margin-top:12px}
+    .icon{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;border:1px solid rgba(2,136,209,0.2);transition:all .3s;cursor:pointer}
+    .icon:hover{transform:translateY(-6px) rotate(-6deg) scale(1.1);box-shadow:0 10px 30px rgba(2,136,209,0.3)}
+
+    .pulse{position:absolute;right:28px;bottom:26px;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle at center, rgba(38,198,218,0.25), rgba(2,136,209,0.15));filter:blur(20px);z-index:1;animation:pulse 2.8s infinite}
+    @keyframes pulse{0%{transform:scale(.9);opacity:.8}70%{transform:scale(1.45);opacity:0}100%{transform:scale(1.6);opacity:0}}
+
+    @media(max-width:980px){.wrap{grid-template-columns:1fr;padding:28px}.card{max-width:720px}.hero{order:2;margin-top:18px}}
+    @media(max-width:560px){h1{font-size:24px}.wrap{padding:18px}.card{padding:20px;border-radius:14px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="wave"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+
+    <section class="hero">
+      <div class="logo">
+        <div class="mark" aria-hidden>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2v20M2 12h20" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.98"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-weight:700;color:#01579b">MediCare Portal</div>
+          <div style="font-size:13px;color:#0277bd">Secure. Fast. Patient-first.</div>
+        </div>
+      </div>
+      <h1>Sign in to your medical dashboard</h1>
+      <p class="lead">Access patient records, appointments, lab results and telemedicine from a secure, modern portal built for hospitals, clinics and healthcare staff.</p>
+    </section>
+
+    <aside class="card" id="card">
+      <div class="card-header">
+        <h2>Welcome back</h2>
+        <div class="toggle" role="tablist">
+          <button id="role-1" class="active">Doctor</button>
+          <button id="role-2">Patient</button>
+        </div>
+      </div>
+
+      <form id="loginForm" autocomplete="on">
+        <div class="field">
+          <label for="email">Email or ID</label>
+          <input id="email" name="email" type="text" placeholder="name@hospital.com or staff-id" required />
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="••••••••" required />
+        </div>
+        <div class="actions" style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+          <label style="font-size:13px;color:#0277bd;display:flex;gap:6px;align-items:center"><input type="checkbox"/> Remember</label>
+          <div style="display:flex;gap:10px">
+            <button type="button" class="btn btn-ghost" id="helpBtn">Need help?</button>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </div>
+        </div>
+        <div class="or">Or continue with</div>
+        <div class="icons">
+          <div class="icon" title="Google">G</div>
+          <div class="icon" title="Microsoft">M</div>
+        </div>
+      </form>
+      <div class="pulse"></div>
+    </aside>
+  </div>
+
+<script>
+  document.querySelectorAll('.toggle button').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      document.querySelectorAll('.toggle button').forEach(b=>b.classList.remove('active'));
+      e.currentTarget.classList.add('active');
+    })
+  })
+
+  document.getElementById('loginForm').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const btn = document.querySelector('.btn-primary');
+    btn.disabled = true;
+    btn.textContent = 'Signing in...';
+    btn.style.opacity = '0.9';
+    btn.style.animation = 'pulseMark 1s infinite';
+    setTimeout(()=>{
+      btn.textContent = 'Welcome!';
+      btn.style.transform = 'scale(1.1)';
+      setTimeout(()=>{
+        btn.disabled = false;
+        btn.textContent = 'Sign in';
+        btn.style.transform = '';
+        btn.style.animation = '';
+      },1500);
+    },2000);
+  });
+
+  document.getElementById('helpBtn').addEventListener('click', ()=>{
+    alert('Contact admin or use password reset if available.');
+  });
+</script>
+</body>
+</html>

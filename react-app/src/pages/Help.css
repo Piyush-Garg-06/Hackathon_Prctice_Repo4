@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  color: #05445E;
+}
+
+
+
+.container {
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: auto;
+  animation: fadeIn 1.5s ease;
+}
+
+.container h1 {
+  color: #01579b;
+  margin-bottom: 30px;
+  font-size: 36px;
+  text-align: center;
+  animation: slideUp 1s ease;
+}
+
+.contact-info {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  animation: cardFade 1s forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.4s;
+}
+
+.contact-info:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-info h2 {
+  color: #0288d1;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: #0277bd;
+  margin: 6px 0;
+}
+
+form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: cardFade 1s forwards;
+  animation-delay: 0.8s;
+}
+
+form label {
+  font-weight: 600;
+  color: #01579b;
+  text-align: left;
+}
+
+form input,
+form textarea {
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #0288d1;
+  outline: none;
+  box-shadow: 0 0 6px rgba(2, 136, 209, 0.5);
+  transform: scale(1.02);
+}
+
+form button {
+  background: #0288d1;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #01579b;
+  transform: scale(1.08);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #0288d1;
+  color: #fff;
+  margin-top: 40px;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

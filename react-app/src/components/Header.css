@@ -1,0 +1,85 @@
+.header {
+  background: linear-gradient(90deg,#0288d1,#26c6da);
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background 0.5s ease, padding 0.5s ease;
+  color: white;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: default;
+  transition: transform 0.4s ease;
+}
+
+.header .logo:hover {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+.header .logo svg {
+  width: 28px;
+  height: 28px;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+  padding: 4px 0;
+}
+
+.header nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+
+.header nav ul li a:hover::after,
+.header nav ul li a.active::after {
+  width: 80%;
+}
+
+.logout-btn {
+  background: #fff;
+  color: #0288d1;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.logout-btn:hover {
+  background: #01579b;
+  color: #fff;
+  transform: scale(1.1);
+}

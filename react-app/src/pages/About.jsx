@@ -14,15 +14,15 @@ const About = () => {
       <div className="container">
         <h2 className="section-title">Our Mission, Vision & Values</h2>
         <div className="card-grid">
-          <div className="card" style={{animationDelay: '.3s'}}>
+          <div className="card" style={{animationDelay: '.3s', cursor: 'pointer'}} onClick={() => window.location.href = '/page/our-mission'}>
             <h3>Our Mission</h3>
             <p>To deliver compassionate and affordable healthcare solutions that meet international standards.</p>
           </div>
-          <div className="card" style={{animationDelay: '.6s'}}>
+          <div className="card" style={{animationDelay: '.6s', cursor: 'pointer'}} onClick={() => window.location.href = '/page/our-vision'}>
             <h3>Our Vision</h3>
             <p>To be a leader in healthcare innovation and research, ensuring better outcomes for every patient.</p>
           </div>
-          <div className="card" style={{animationDelay: '.9s'}}>
+          <div className="card" style={{animationDelay: '.9s', cursor: 'pointer'}} onClick={() => window.location.href = '/page/our-values'}>
             <h3>Our Values</h3>
             <p>Integrity, empathy, and excellence guide everything we do at MediCare Hospital.</p>
           </div>
@@ -30,22 +30,22 @@ const About = () => {
 
         <h2 className="section-title" style={{marginTop: '60px'}}>Meet Our Experts</h2>
         <div className="team-grid">
-          <div className="team-card" style={{animationDelay: '1s'}}>
+          <div className="team-card" style={{animationDelay: '1s', cursor: 'pointer'}} onClick={() => window.location.href = '/page/dr-a-sharma'}>
             <img src="https://img.freepik.com/free-photo/smiling-doctor-with-stethoscope-white-coat_23-2147896097.jpg" alt="Doctor 1" />
             <h4>Dr. A. Sharma</h4>
             <p>Cardiologist</p>
           </div>
-          <div className="team-card" style={{animationDelay: '1.2s'}}>
+          <div className="team-card" style={{animationDelay: '1.2s', cursor: 'pointer'}} onClick={() => window.location.href = '/page/dr-r-gupta'}>
             <img src="https://img.freepik.com/free-photo/doctor-with-stethoscope-his-neck-smiling_1150-19226.jpg" alt="Doctor 2" />
             <h4>Dr. R. Gupta</h4>
             <p>Neurologist</p>
           </div>
-          <div className="team-card" style={{animationDelay: '1.4s'}}>
+          <div className="team-card" style={{animationDelay: '1.4s', cursor: 'pointer'}} onClick={() => window.location.href = '/page/dr-s-verma'}>
             <img src="https://img.freepik.com/free-photo/portrait-young-female-doctor_23-2147896288.jpg" alt="Doctor 3" />
             <h4>Dr. S. Verma</h4>
             <p>Pediatrician</p>
           </div>
-          <div className="team-card" style={{animationDelay: '1.6s'}}>
+          <div className="team-card" style={{animationDelay: '1.6s', cursor: 'pointer'}} onClick={() => window.location.href = '/page/dr-m-khan'}>
             <img src="https://img.freepik.com/free-photo/portrait-smiling-male-doctor_23-2147896077.jpg" alt="Doctor 4" />
             <h4>Dr. M. Khan</h4>
             <p>Orthopedic Surgeon</p>

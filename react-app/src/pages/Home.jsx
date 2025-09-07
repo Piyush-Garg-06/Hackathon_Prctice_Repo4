@@ -1,12 +1,9 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import './Home.css';
 
 const Home = () => {
   return (
     <>
-      <Header />
       <section className="hero" id="home">
         <h1>Welcome to MediCare Portal</h1>
         <p>Your trusted platform for managing patient records, booking appointments, accessing lab results, and connecting with healthcare professionals.</p>
@@ -14,6 +11,6 @@ const Home = () => {
       </section>
     </>
   );
-}
-export default Home;
+};
 
+export default Home;
